@@ -1,0 +1,4 @@
+[CONFIGURATION]
+LOG_NAME=ip-logs.txt
+PRI_IP_URL=https://api.ipify.org?format=json
+
