@@ -1,4 +1,4 @@
-#!/usr/env/bin python
+#!/usr/bin/env python3
 
 import time
 import datetime
@@ -34,7 +34,7 @@ def ip_detect():
     except requests.exceptions.ConnectionError:
         print('Error: check that URL is valid')
 
-def logger():
+def logger(ip):
     _log_name = log_name
     _url = pri_ip_url
     try:
@@ -51,12 +51,16 @@ def ip_compare():
     ip_comp = open(_log_name, 'r')
     #ip_comp = readlinesl() #TODO Complete this function
 
-ip = ip_detect()
-status = logger()
-if status == True:
-    print('log written')
-print(f'IP Address: {Colors.OKBLUE}{ip}{Colors.END}')
-ip_compare()
+def main():
+    ip = ip_detect()
+    status = logger(ip)
+    if status == True:
+        print('log written')
+    print(f'IP Address: {Colors.OKBLUE}{ip}{Colors.END}')
+    ip_compare()
+
+if __name__ == '__main__':
+    main()
 
    
 
